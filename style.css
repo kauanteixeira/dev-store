@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --headerBgColor: #457b9d;
+  --fontColor: #ececec;
+  --black: #132743;
+  --white: #fff;
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--fontColor);
+}
+
+/*==========HEADER==========*/
+
+header.header {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--headerBgColor);
+}
+
+/*==========LOGO==========*/
+.tittle {
+  color: var(--black);
+  font-size: 2.5rem;
+  line-height: 0;
+}
+
+.tittle span {
+  color: var(--fontColor);
+}
+
+/*==========NAVBAR==========*/
+
+nav ul.nav-bar,
+li {
+  list-style: none;
+  line-height: 0;
+}
+
+.nav-bar,
+li a {
+  text-decoration: none;
+  color: var(--fontColor);
+  transition: color 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.nav-bar,
+li {
+  display: inline;
+  margin-left: 2rem;
+}
+
+.nav-bar,
+li a:hover {
+  color: var(--black);
+}
+
+/*==========CARD PRODUCTS==========*/
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#products {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  /* padding-top: 2rem; */
+  flex-flow: wrap;
+}
+
+#products .card {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 3px 3px;
+}
+
+.card {
+  margin: 1.5rem;
+  margin-bottom: 3rem;
+  text-decoration: none;
+}
+
+.product-single {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card .product-single {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+#products .card:hover {
+  box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.12);
+}
+
+.card .product-single img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.card .product-single .description {
+  font-size: 18px;
+  text-align: center;
+}
+
+.card .product-single {
+  color: var(--black);
+}
+
+.card .product-single .info-product {
+  width: 10rem;
+  height: 3rem;
+  color: var(--headerBgColor);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border: 2px solid var(--headerBgColor);
+  border-radius: 0.3rem;
+  background-color: var(--white);
+}
+
+.card .product-single .info-product:hover {
+  color: var(--fontColor);
+  background-color: var(--headerBgColor);
+  transition: all 0.4s ease;
+}
+
+/*==========asasasasasa==========*/
+
+@media (max-width: 918px) {
+  nav .nav-bar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--headerBgColor);
+    z-index: 999;
+    left: -1000px;
+    top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  nav .nav-bar li {
+    list-style: none;
+    line-height: 0;
+    display: block;
+    margin-top: 4rem;
+  }
+
+  .nav-bar,
+  li {
+    margin-left: 0;
+  }
+
+  .nav-bar li a {
+    text-decoration: none;
+    color: var(--fontColor);
+    transition: color 0.2s ease;
+  }
+
+  .nav-bar li a:hover {
+    color: var(--black);
+  }
+  nav .side-bar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+  }
+
+  nav .side-bar:before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: var(--white);
+    box-shadow: 0 10px 0 var(--white);
+    transition: 0.2s;
+    transform: translateY(-10px);
+  }
+
+  nav .side-bar:after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: var(--white);
+    transform: translateY(10px);
+  }
+
+  nav .side-bar.active::before {
+    box-shadow: 0 0 0 var(--white);
+    transform: translateY(0px) rotate(-45deg);
+  }
+
+  nav .side-bar.active::after {
+    transform: translateY(0px) rotate(45deg);
+  }
+
+  .tittle {
+    color: var(--black);
+    font-size: 2rem;
+    line-height: 0;
+  }
+
+  .tittle span {
+    color: var(--fontColor);
+  }
+}
