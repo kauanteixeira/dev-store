@@ -25,7 +25,7 @@ textarea {
 header.header {
   display: flex;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -35,7 +35,7 @@ header.header {
 /*==========LOGO==========*/
 .tittle {
   color: var(--black);
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 0;
 }
 
@@ -56,7 +56,7 @@ li a {
   text-decoration: none;
   color: var(--fontColor);
   transition: color 0.2s ease;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .nav-bar,
@@ -72,93 +72,96 @@ li a:hover {
 
 /*==========CARD PRODUCTS==========*/
 
-.container {
+#products {
   width: 100%;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: wrap;
   position: relative;
 }
 
-#products {
-  width: 95%;
+#products .card {
+  width: 250px;
+  height: 350px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: var(--white);
-  /* padding-top: 2rem; */
-  flex-flow: wrap;
-}
-
-#products .card {
-  width: 350px;
-  height: 500px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  align-items: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0 0 3px 3px;
+  padding-top: 1.5rem;
+  background-color: var(--white);
+  overflow: hidden;
 }
 
 .card {
-  margin: 1.5rem;
-  margin-bottom: 3rem;
+  margin: 0.5rem;
   text-decoration: none;
-}
-
-.product-single {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+  position: relative;
 }
 
 .card .product-single {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
 
 #products .card:hover {
-  box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.12);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.12));
 }
 
 .card .product-single img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.card .product-single .description {
+.informations {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif;
+  position: absolute;
+  top: 70%;
+  left: 10px;
+  font-size: 15px;
+}
+
+.informations .description {
+  color: #333;
+}
+
+.informations .price {
+  color: rgb(19, 19, 19);
   font-size: 18px;
-  text-align: center;
+  margin: 0.2rem 0;
 }
 
-.card .product-single {
-  color: var(--black);
-}
-
-.card .product-single .info-product {
-  width: 10rem;
-  height: 3rem;
+.installments {
   color: var(--headerBgColor);
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  cursor: pointer;
-  border: 2px solid var(--headerBgColor);
-  border-radius: 0.3rem;
-  background-color: var(--white);
+  font-size: 13px;
 }
 
-.card .product-single .info-product:hover {
-  color: var(--fontColor);
-  background-color: var(--headerBgColor);
-  transition: all 0.4s ease;
+.informations .price sup {
+  font-size: 14px;
+  margin-top: 1px;
 }
 
-/*==========asasasasasa==========*/
+.divider {
+  width: 100%;
+  height: 1px;
+  top: 67%;
+  background-color: rgba(51, 51, 51, 0.192);
+  position: absolute;
+}
+
+/*==========PRODUCT==========*/
+
+/*==========MEDIA==========*/
 
 @media (max-width: 918px) {
   nav .nav-bar {
@@ -168,7 +171,7 @@ li a:hover {
     background-color: var(--headerBgColor);
     z-index: 999;
     left: -1000px;
-    top: 5rem;
+    top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -191,6 +194,7 @@ li a:hover {
     text-decoration: none;
     color: var(--fontColor);
     transition: color 0.2s ease;
+    font-size: 1rem;
   }
 
   .nav-bar li a:hover {
@@ -244,5 +248,74 @@ li a:hover {
 
   .tittle span {
     color: var(--fontColor);
+  }
+}
+
+@media (max-width: 540px) {
+  #products .card {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    border-radius: 0.3rem;
+    background-color: var(--white);
+    overflow: hidden;
+  }
+
+  .card {
+    margin: 0.5rem 0.5rem;
+    text-decoration: none;
+  }
+
+  .card .product-single {
+    display: flex;
+  }
+
+  #products .card:hover {
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.12));
+  }
+
+  .card .product-single img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .informations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+      Arial, sans-serif;
+    position: absolute;
+    top: 70%;
+    left: 10px;
+    font-size: 15px;
+  }
+
+  .informations .description {
+    color: #333;
+  }
+
+  .informations .price {
+    color: rgb(19, 19, 19);
+    font-size: 18px;
+  }
+
+  .installments {
+    color: var(--headerBgColor);
+    font-size: 13px;
+  }
+
+  .informations .price sup {
+    font-size: 14px;
+    margin-top: 1px;
+  }
+
+  .divider {
+    display: none;
   }
 }
